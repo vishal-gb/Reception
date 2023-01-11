@@ -1,1 +1,6 @@
-Flask
+flask
+opencv-python
+fpdf
+numpy
+pandas
+
