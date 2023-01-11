@@ -20,6 +20,13 @@ switch=1
 rec=0
 
 
+PORT = os.environ["PY_PORT"]
+
+PATH = os.environ["PATH"]
+
+PATHS = os.environ["PATHS"]
+
+
 #instatiate flask app  
 app = Flask(__name__, template_folder='./templates')
 
@@ -131,7 +138,7 @@ def home():
         
    
         df = pd.concat(dfs, ignore_index=True, sort=False)
-        df["Pic_loc"]="/home/snekha/hackathons/Reception_SJCE/Reception_website/Final_website"
+        df["Pic_loc"]=PATHS
         df["Pdf_loc"]="../static/shot/"
         # df.drop(['userName'], 
         #     axis = 1, inplace = True)
@@ -185,13 +192,13 @@ def home():
         pdf_loc=str(df.iloc[-1,13])
         global n
         n=str(df.iloc[-1,7])
-        p = os.path.sep.join(['/home/snekha/hackathons/Reception_SJCE/Reception_website/Final_website/static/shot',n+'.jpg'])
+        p = os.path.sep.join([PATH,n+'.jpg'])
         cv2.imwrite(p, frames)
         img=str(df.iloc[-1,12])
         pdf.image(img+"/static/shot/"+n+".jpg", x = 95, y = 55, w = 40, h = 0, type = '', link = '')
         # TEXTFILE = open("input.csv", "w")
         # TEXTFILE.truncate()
-        pdf.output("/home/snekha/hackathons/Reception_SJCE/Reception_website/Final_website/static/shot/"+n+".pdf")
+        pdf.output(PATH+n+".pdf")
         return redirect(url_for('pdfview'))
         # return render_template('result.html')
 
@@ -209,8 +216,8 @@ def pdfview():
 
 @app.route('/success', methods=['GET', 'POST'])
 def success():
-     os.remove("/home/snekha/hackathons/Reception_SJCE/Reception_website/Final_website/static/shot/"+n+".pdf")
-     os.remove("/home/snekha/hackathons/Reception_SJCE/Reception_website/Final_website/static/shot/"+n+".jpg")
+     os.remove(PATH+n+".pdf")
+     os.remove(PATH+n+".jpg")
      return render_template("success.html")
 
 @app.route('/', methods=['GET', 'POST'])
@@ -219,7 +226,7 @@ def landing_page():
      return render_template("start.html")
 
 if __name__ == '__main__':
-     app.run(host="0.0.0.0",port=5000)
+     app.run(host="0.0.0.0",port=PORT)
     
 camera.release()
 cv2.destroyAllWindows()      
