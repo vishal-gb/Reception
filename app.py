@@ -195,7 +195,7 @@ def home():
         return redirect(url_for('pdfview'))
         # return render_template('result.html')
 
-    return render_template('Reception_copy.php')
+    return render_template('Reception.html')
 
 
 @app.route('/pdfview', methods=['GET', 'POST'])
