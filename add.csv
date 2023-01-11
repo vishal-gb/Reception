@@ -1,0 +1,5 @@
+NameOfClg,Name,ModeOfEntry,Relation,Sex,IdentityProof,IdentityProofNo,MobileNumber,PurposeOfVisit,Department,MeetingPerson,NumberOfPersons,Pic_loc,Pdf_loc
+St. Josephs College Of Engineering,snekas,Parent,Grand Mother,Male,License,123,12121,dgvd,M.E. - CSE,DIRECTOR,2,/home/snekha/hackathons/Reception_SJCE/Reception_website/Final_website,../static/shot/
+St. Josephs College Of Engineering,sh,Hostel Parent,Grand Father,Female,License,123,23332,dgvd,M.B.A,DIRECTOR,2,/home/snekha/hackathons/Reception_SJCE/Reception_website/Final_website,../static/shot/
+St. Josephs College Of Engineering,sh,Hostel Parent,Mother,Female,License,123,4599,dgvd,M.E. - CSE,ABHS,2,/home/snekha/hackathons/Reception_SJCE/Reception_website/Final_website,../static/shot/
+St. Josephs College Of Engineering,snekas,Hostel Parent,Grand Father,Male,License,123,45454,dgvd,M.E. - Power Electronics & Drives,MANAGER,2,/home/snekha/hackathons/Reception_SJCE/Reception_website/Final_website,../static/shot/
